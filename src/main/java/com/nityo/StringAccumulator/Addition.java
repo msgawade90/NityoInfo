@@ -1,5 +1,8 @@
 package com.nityo.StringAccumulator;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
 * The add program performs addition of numbers of string format.
 *
@@ -32,8 +35,18 @@ public class Addition {
 	            sum=0;
 		    }
 		else{
+		    List negativeNumbers = new ArrayList();
+
 	            for (String number : numberArray) {
-	                sum+=Integer.parseInt(number.trim()); 
+	                int numberInt = Integer.parseInt(number.trim());
+
+	            	if (numberInt < 0) {
+	            		negativeNumbers.add(numberInt);
+	            	}
+	                sum+=numberInt; 
+	            }
+	            if (negativeNumbers.size() > 0) {
+	                throw new RuntimeException("Negatives numbers not allowed: " + negativeNumbers.toString());
 	            }
 	        }
 			return sum;

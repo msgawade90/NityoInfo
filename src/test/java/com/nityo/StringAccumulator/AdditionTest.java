@@ -42,4 +42,8 @@ public class AdditionTest {
     public final void whenDelimitersNoExceptionThrow() {
         Assert.assertEquals(1+2+3, Addition.add("//;\n1;2;3"));
     }
+    @Test
+    public final void whenNegativeNumbersExceptionThrow() {
+        Assert.assertEquals(1+2+3, Addition.add("//;\n1;-2;3"));
+    }
 }
