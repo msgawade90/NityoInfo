@@ -1,6 +1,7 @@
 package com.nityo.StringAccumulator;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -30,6 +31,12 @@ public class Addition {
 			 str=str.replace("\n", "");
 		     numberArray = str.split(";");
 		 }
+		 if(str.contains("*"))
+		 {
+			 str=str.substring(5, str.length());
+			 str=str.replace("\n", "");
+		     numberArray = str.split("\\*\\*\\*");
+		 }
 		 if(str.length()==0)
 		    {
 	            sum=0;
@@ -38,14 +45,14 @@ public class Addition {
 		    List negativeNumbers = new ArrayList();
 
 	            for (String number : numberArray) {
-	                int numberInt = Integer.parseInt(number.trim());
-
+	            	int numberInt=0;
+	                 numberInt = Integer.parseInt(number.trim());
 	            	if (numberInt < 0) {
 	            		negativeNumbers.add(numberInt);
 	            	}else if (numberInt <= 1000) {
 		                sum+=numberInt; 
                 }
-	            }
+}
 	            if (negativeNumbers.size() > 0) {
 	                throw new RuntimeException("Negatives numbers not allowed: " + negativeNumbers.toString());
 	            }
