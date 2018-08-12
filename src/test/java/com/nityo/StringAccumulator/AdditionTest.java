@@ -38,4 +38,8 @@ public class AdditionTest {
     public final void whenNewLinesNoExceptionThrow() {
         Assert.assertEquals(1+2+3, Addition.add("1\n2,3"));
     }
+    @Test
+    public final void whenDelimitersNoExceptionThrow() {
+        Assert.assertEquals(1+2+3, Addition.add("//;\n1;2;3"));
+    }
 }

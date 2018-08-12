@@ -17,17 +17,21 @@ public class Addition {
 	   * @return int This returns sum of numbers.
 	   */
 	 public static int add(String str){
-		    String[] numberArray = str.split(",|\n");
+		 String[] numberArray = str.split(",");
 		    int sum=0;
-		    if(str.length()==0)
+		 if(str.contains(","))
+		     numberArray = str.split(",|\n|;");
+		 if(str.contains(";"))
+		 {
+			 str=str.substring(3, str.length());
+			 str=str.replace("\n", "");
+		     numberArray = str.split(";");
+		 }
+		 if(str.length()==0)
 		    {
 	            sum=0;
 		    }
-		    /*Code Refactor for unknown numbers
-		     * 
-		     * else if (numberArray.length > 2) {
-	            throw new RuntimeException("2 numbers allowed");
-	        }*/ else {
+		else{
 	            for (String number : numberArray) {
 	                sum+=Integer.parseInt(number.trim()); 
 	            }
