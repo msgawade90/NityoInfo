@@ -42,8 +42,9 @@ public class Addition {
 
 	            	if (numberInt < 0) {
 	            		negativeNumbers.add(numberInt);
-	            	}
-	                sum+=numberInt; 
+	            	}else if (numberInt <= 1000) {
+		                sum+=numberInt; 
+                }
 	            }
 	            if (negativeNumbers.size() > 0) {
 	                throw new RuntimeException("Negatives numbers not allowed: " + negativeNumbers.toString());

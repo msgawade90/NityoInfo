@@ -46,4 +46,9 @@ public class AdditionTest {
     public final void whenNegativeNumbersExceptionThrow() {
         Assert.assertEquals(1+2+3, Addition.add("//;\n1;-2;3"));
     }
+    @Test
+    public final void whenOneOrMoreNumbersAreGreaterThan1000IsUsedThenItIsNotIncludedInSum() {
+        Assert.assertEquals(3+1000+6, Addition.add("3,1000,1001,6,1234"));
+    }
+    
 }
