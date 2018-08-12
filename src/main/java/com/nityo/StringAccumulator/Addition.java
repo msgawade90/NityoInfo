@@ -22,9 +22,11 @@ public class Addition {
 		    {
 	           int number=0;
 		    }
-		    else if (numberArray.length > 2) {
+		    /*Code Refactor for unknown numbers
+		     * 
+		     * else if (numberArray.length > 2) {
 	            throw new RuntimeException("2 numbers allowed");
-	        } else {
+	        }*/ else {
 	            for (String number : numberArray) {
 	                Integer.parseInt(number); 
 	            }
