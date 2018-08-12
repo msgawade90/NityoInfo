@@ -31,11 +31,17 @@ public class Addition {
 			 str=str.replace("\n", "");
 		     numberArray = str.split(";");
 		 }
-		 if(str.contains("*"))
+		 if(str.contains("***"))
 		 {
 			 str=str.substring(5, str.length());
 			 str=str.replace("\n", "");
 		     numberArray = str.split("\\*\\*\\*");
+		 }
+		 if(str.contains("%"))
+		 {
+			 str=str.substring(5, str.length());
+			 str=str.replace("\n", "");
+		     numberArray = str.split("\\*|\\%");
 		 }
 		 if(str.length()==0)
 		    {
