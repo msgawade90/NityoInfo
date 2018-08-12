@@ -16,11 +16,12 @@ public class Addition {
 	   * @param str This is the string parameter for numbers
 	   * @return int This returns sum of numbers.
 	   */
-	 public static void add(String str){
-		    String[] numberArray = str.split(",");
+	 public static int add(String str){
+		    String[] numberArray = str.split(",|\n");
+		    int sum=0;
 		    if(str.length()==0)
 		    {
-	           int number=0;
+	            sum=0;
 		    }
 		    /*Code Refactor for unknown numbers
 		     * 
@@ -28,8 +29,9 @@ public class Addition {
 	            throw new RuntimeException("2 numbers allowed");
 	        }*/ else {
 	            for (String number : numberArray) {
-	                Integer.parseInt(number); 
+	                sum+=Integer.parseInt(number.trim()); 
 	            }
 	        }
+			return sum;
 	    }
 }
